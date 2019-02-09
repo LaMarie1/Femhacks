@@ -1,15 +1,526 @@
-<!DOCTYPEhtml>
+<!DOCTYPE html>
+
 <html>
-<head>
-  <title> 
-    
-  </title>
-  <style>
-    
-  </style>
-  <script>
-  
-  </script>
-  
-</head> 
- 
+    <head>
+        <title></title>
+
+       <!-- This is how you link to an external style sheet. -->
+       <!-- <link href="advLayoutstyle.css" rel="stylesheet" type="text/css" /> -->  
+
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                min-width: 320px;
+                font-family: "Times New Roman", Times, serif; 
+                
+            }
+            
+            #titleNav { 
+                top:0px;
+                left:0px;
+                z-index: 1;
+                width: 100%;
+                min-width: 600px;
+                position: fixed;
+                
+                background-color: #5e3b36;
+               
+                padding-bottom: 8px; 
+                color: white;
+                font-family: "Times New Roman", Times, serif; 
+                font-weight: bold;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            
+            #nav {
+                top: 0px;
+                right: 0px;
+                
+                font-size:17px;
+                text-align: right;   
+            }
+            
+            #nav a {
+                text-decoration: none;
+                color: white;
+            }
+            
+            #nav a:hover {
+                color: rgb(209, 129, 31);
+            }
+             #navGroup {
+                display: none; 
+            }
+            #navIcon {
+                padding-top: 10px;
+                width:20px;
+                box-sizing: border-box;
+                display: block;
+            }
+            .navLink {
+                width:100px;
+                padding: 4px;
+                display: block;
+                box-sizing: border-box;
+            }
+
+            
+            
+            .sng-page {
+                min-height: 500px;
+                min-height: 100vh;
+                
+                border-bottom: 1px solid rgba(0,0,0,0); 
+                border-top: 1px solid rgba(0,0,0,0); 
+            }
+            
+            #footer {
+                position:fixed;
+                bottom: 0px; 
+                left: 0px; 
+                z-index: 1;
+               
+
+                background-color: #5e3b36;
+                color: white; 
+                width:100%;
+                text-align:center;
+                padding:4px;
+            }
+            
+            #home {
+                background: url(pics/natpark.jpeg) no-repeat center center fixed;
+                background-size: cover;
+            }
+            
+            .transparentBox {
+                margin: auto;
+                margin-top: 20%;
+                margin-bottom: 15%;
+                
+                background-color: #341d1a;
+                border: 1px solid #341d1a;
+                opacity: 0.64;
+                max-width: 370px;
+                width: 100%;
+                border-radius: 10px;
+                
+                text-align: center;
+                color: white;
+                 
+              
+            }
+            
+            .transparentBox h1 {
+                font-weight: bold;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            
+            #info {
+                background-color: #9F3821;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #info h1 {
+                color: white;
+                text-align: center;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            .container {
+                width: 100%;
+                box-sizing: border-box;
+                background-color: #F8E1A3;
+
+                color: black;
+            }
+            
+            .container a {
+                text-decoration: none;
+                background-color: #9F3821;
+                color: white;
+                padding: 7px 7px;
+                text-align: center;
+                display: inline-block;
+                border-radius: 5px;
+            }
+            
+            .container a:hover {
+                background-color: #D24119;
+            }
+            
+             .column {
+                width: 100%;
+                padding: 5px 20px;
+                
+                box-sizing: border-box; 
+                border-bottom: 1px solid white;
+                border-top: 1px solid white;
+            }
+            .column h2 {
+                text-align: center;
+            }
+
+            /* ------------ Desktop Only Styles --------------- */
+            @media screen and (min-width: 600px) {
+
+                .column {
+                    float: left;
+                    border: none;             
+                }
+
+                .column33 {
+                    width: 33%;
+                }
+                
+                .column50 {
+                    width: 50%;
+                }
+
+                .clear { 
+                    clear:both;
+                }
+                .navLink{
+                    display:inline;
+                    border:none;
+                }
+                #navGroup {
+                    display:block;
+                    padding-top: 10px;
+                }
+                #navIcon {
+                    display:none;
+                }
+
+            }
+            
+            #formpage {
+                background-color: #34322d;
+                color: white;
+            }
+               
+            #formpage h3 {
+                padding-left: 50px;
+            }
+            
+            form {
+                background-color: #34322d;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                margin-left: 5ex;
+                margin-right: 5ex;
+                line-height: 1.75em;
+            }
+
+            input {
+                padding:2px;
+                border-color: lightgray; 
+            }
+
+            input:focus { /* When your cursor is in the field... */
+                box-shadow: 0px 0px 9px #668899;
+            }
+            
+        </style>
+
+    </head>
+    <body onresize="resize()">
+        <div id="titleNav">
+            <div id="nav">
+                <div id="navIcon" onclick="iconClicked()">
+                        <img src="pics/menuIconWhite.png" alt="" width="35"/>
+                    </div>
+                <div id="navGroup">
+                    <a href="#home" class="navLink">Home</a>
+                    &nbsp;
+                    | 
+                    &nbsp;
+                    <a href="#info" class="navLink">Featured</a>
+                    &nbsp;
+                    | 
+                    &nbsp;
+                    <a href="#formpage" class="navLink">Form</a>
+                    &nbsp;
+                    |
+                    &nbsp;
+                    <a href="../index.html">Go Back</a>
+                    &nbsp; 
+                    &nbsp; 
+                </div>
+            </div>
+        </div>
+        <div id="home" class="sng-page">
+            <div class="transparentBox">
+                <h1> National Parks </h1>
+                <p> Learn more about your favorite parks including hidden trails, wildlife, news content, etc. </p>
+            </div> 
+        </div>
+        
+        <div id="info" class="sng-page">
+            &nbsp; 
+            <h1> Featured Parks </h1>
+            <div class="container">
+                <div class="column column33">
+                    <h2>Yellowstone National Park</h2>
+                    <img src="pics/yellowstone.jpg" alt="Yellowstone" class="resizable"
+                         style="border-radius: 20px; width: 73%; margin-left: auto; margin-right:auto; display:block;">
+                    <p>Yellowstone is America's first and most prominent national park. It's home to wildlife
+                        from bears to bison and geological marvels such as hot springs and geysers
+                    </p>
+                    <p>Location: Wyoming, Idaho, Montana</p>
+                    <p>Size: 2,221,766 acres</p>
+                    <p>Most popular attraction: Old Faithful</p>
+                    <a href="https://artsandculture.google.com/streetview/yellowstone-national-park/tAFH8eNt3HUKZw?sv_lng=-109.60961179103339&sv_lat=44.46205082503408&sv_h=221.8430581934675&sv_p=13.184015501186565&sv_pid=GKNJXuADxYwIZtFfwNturg&sv_z=0.035046947099200754"
+                       >Click to Explore</a>
+            </div>
+
+                <div class="column column33">
+                    <h2>Yosemite National Park</h2>
+                    <img src="pics/yosemite.jpg" alt="Yosemite" class="resizable"
+                         style="border-radius: 20px; width: 70%; margin-left: auto; margin-right:auto; display:block;">
+                    <p>Designated a World Heritage Site in 1984, Yosemite is known for its granite cliffs,
+                        waterfalls, clear streams, giant sequoia groves and biological diversity.</p>
+                    <p>Location: California</p>
+                    <p>Size: 747,956 acres</p>
+                    <p>Most popular attraction: Yosemite Falls</p>
+                    <a href="https://artsandculture.google.com/streetview/yosemite-national-park/PgGfjnYlCiLYrQ?sv_lng=-119.5799890818713&sv_lat=37.74506010954618&sv_h=39&sv_p=15&sv_pid=rZYzGxrBrZueLIb5v_kmKA&sv_z=1.0000000000000002"
+                       >Click to Explore</a>
+                </div>
+
+                <div class="column column33">
+                    <h2>Everglades National Park</h2>
+                    <img src="pics/everglades.jpg" alt="Everglades" class="resizable"
+                         style="border-radius: 20px; width: 90%; margin-left: auto; margin-right:auto; display:block;">
+                    <p>The Everglades is the largest source of tropical wilderness in the United States.
+                        It protects the habitat for numerous rare species like the manatee, 
+                        American crocodile, and the Florida panther.</p>
+                    <p>Location: Florida</p>
+                    <p>Size: 470,000 acres</p>
+                    <p>Most popular attraction: Anhinga Trail </p>
+                    <a href="https://artsandculture.google.com/streetview/everglades-national-park/qwEGnRMdnNVvjg?sv_lng=-80.91845746025467&sv_lat=25.1511745750499&sv_h=176&sv_p=14&sv_pid=C2uM5eG1jbrSzqlchv0M8A&sv_z=1.0000000000000002"
+                       >Click to Explore</a>
+                </div>
+
+                <div class="clear"></div>
+
+            </div> <!-- end container -->
+        </div>
+        
+        <div id="formpage" class="sng-page">
+            &nbsp;
+            &nbsp;
+            <h3>Subscribe and discover more about parks near you!</h3>
+            <form method="post" action="http://www.temple.edu/cgi-bin/mail?isabela.a.arnone@temple.edu"> 
+                <div class="column column50">
+
+                    What is Your Name?   <br/>  
+                    <input type="text" name="userName" placeholder="name" required=""/>  <br/> 
+                    What is your email? <br/> 
+                    <input type="email" name="userEmail" placeholder="name@domain.com" required=""/> <br/>
+                    What is your age?  <br/> 
+                    <input type="number" name="userAge" min="1" max="120" step="1" value="18"/> <br/>
+                    Are you a beginner, intermediate or advanced hiker? <br/> 
+                    <input type="radio" name="userLevel" value="B"  />   Beginner   
+                    <input type="radio" name="userLevel"  value="I"  />    Intermediate 
+                    <input type="radio" name="userLevel" value="A" /> Advanced<br/>
+                </div>
+                <div class="column column50">
+                    Select a state: <br/> 
+                    <select name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>    <br/>
+
+                    Any comments, questions or suggestions? <br/>
+                    <textarea name="inputcomments" cols="45" rows="5" placeholder="Type your comments here"></textarea> <br/>
+                    Would you like to receive emails about upcoming events and opportunities?
+                    <input type="checkbox" name="emailList"  />  <br/> 
+                    <input type="submit" value= "Submit" />
+
+                </form>
+                <br/>
+            </div>
+        </div>
+
+        <div id="footer">
+            Isabella Arnone
+        </div>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                
+                $(".resizable").mouseenter(function () {
+                    $(this).animate({height: "+=10%", width: "+=10%"});
+                });
+                
+                $(".resizable").mouseleave(function () {
+                    $(this).animate({height: "-=10%", width: "-=10%"});
+                });
+                // $('a[href^="#"]') --> thia selector applies to all <a> elements with a href attribute that starts with "#".
+                //    Learned this from   http://www.w3schools.com/jquery/jquery_ref_selectors.asp
+                $('a[href^="#"]').click(function () {
+
+                    // "this" means the element involved in the event, so, the link that was clicked.
+                    console.log("this");
+                    console.log(this); // if you console.log an object, you'll see nice tree view
+                    // of the object's properties in the console (F12 from Chrome)
+                    console.log("-");
+
+                    // ".hash" refers to the href attribute of the <a> tag. So, if <a href="#page1">
+                    // was clicked, then "this.hash" has this value: "#page1"
+                    console.log("this.hash");
+                    console.log(this.hash);
+                    console.log("-");
+
+                    // $ is a jQuery function which returns a jQuery object that references the
+                    // specified HTML element. For example, $("#content") returns a jQuery
+                    // object that references the HTML element with id="content". This object also has
+                    // loads of contextual information (e.g., parent, siblings, and many other properties.
+
+                    // So, variable "target" references a jQuery object that the user clicked. 
+                    var target = $(this.hash);
+                    console.log("$(this.hash)");
+                    console.log(target);
+                    console.log("-");
+
+                    // This if statement will run if target.length exists.
+                    if (target.length) {
+
+                        // animate is a jQuery function (what_to_do, how_fast_in_millisecs). 
+                        // "what_to_do" is an object with any number of CSS property/value pairs:
+                        /*
+                         * $("button").click(function(){
+                         $("div").animate({
+                         left: '250px',
+                         opacity: '0.5',
+                         height: '150px'
+                         },500);
+                         }); 
+                         */
+                        // 
+                        // scrollTop is a javaScript property of any DOM element. 
+                        // It measures the number of pixels from the DOM element to the top of 
+                        // of the DOM element's scrollable parent element.
+                        //           see http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_scrollleft
+                        // 
+                        // .offset() is a function (of any jQuery object) that returns an object with 
+                        // top and left properties (top/left relative to the document).
+
+                        $('html, body').animate({
+                            // set the scrollTop property (of the browser)
+                            // to be the top attribute of the element being linked to
+                            scrollTop: target.offset().top
+                        }, 1000);  // but do it a bit slow (900 millisecs)
+                    }
+
+                });
+                // returns a reference to the HTML element with the given id
+                function my$(id) {
+                    return document.getElementById(id);
+                }
+
+                // This function is invoked whenever the navIcon is clicked -- because of the 
+                // <div id="navIcon" onclick="iconClicked()"> tag in the HTML.
+                function iconClicked() {
+                    var navGroup = my$("navGroup");
+                    var navDisplay = getComputedStyle(navGroup).display;
+                    if (navDisplay === "block") {
+                        my$("navGroup").style.display = "none";
+                    } else {
+                        my$("navGroup").style.display = "block";
+                    }
+                    console.log("icon Clicked. navGroup is " + my$("navGroup").style.display);
+                }
+
+
+                // Global declarations **************************************************
+                var navIcon = my$("navIcon"); // reference to the "navIcon" div
+
+                // This is the initial display attribute (block or none) - depends on the 
+                // size of browser at page refresh time. 
+                // I had to use getComputedStyle (per internet search) rather than just 
+                // navIcon.style.display because the initial setting is set by CSS not javaScript.
+                var iconDisplay = getComputedStyle(navIcon).display;
+                console.log("initial iconDisplay is " + iconDisplay);
+
+                // We want to have certain behavior when the browser first "gets small" 
+                // (converts to mobile layout) and when the browser first "gets big" 
+                // (converts to desktop layout). So we have to track the previous value 
+                // as well as the current value.
+                var previousIconDisplay = iconDisplay;
+                // End of Global declarations **************************************************
+
+
+                // This function is invoked whenever the browser is resized -- because of the 
+                // <body> tag in the HTML: <body onresize="resize()">
+                function resize() {
+                    previousIconDisplay = iconDisplay;
+                    iconDisplay = getComputedStyle(navIcon).display;
+                    console.log("resized. iconDisplay is " + iconDisplay);
+
+                    if (iconDisplay === "none" && previousIconDisplay === "block") {
+                        console.log("sized big - show nav group");
+                        my$("navGroup").style.display = "block";
+
+                    }
+                    if (iconDisplay === "block" && previousIconDisplay === "none") {
+                        console.log("sized small - hide nav group");
+                        my$("navGroup").style.display = "none";
+                    }
+                }
+
+            });
+        </script>
+
+    </body>
+</html>
