@@ -1,3 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> </title>
+</head>
+<body>
+
+<?php
+// 4 variables to connect to the database
+$host = "localhost";
+$username = "root";
+$user_pass = "usbw";
+$database_in_use = "test";
+
+//create database connectiono instance
+$mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
+
+//if there are any values in the table, display them one at a time
+if ($mysqli->connect_errno) {
+	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+echo $mysqli->host_info . "<br>";
+
+//$sql = "SELECT id, first, last, email, username, password FROM accounts";
+//$result = $mysqli->query($sql);
+
+//if ($result->num_rows > 0) {
+    // output data of each row
+    /*while($row = $result->fetch_assoc()) {
+        echo "id" . $row["id"]. "first" . $row["first"]. "last" . $row["last"]. "email" . $row["email"]. "username" . $row["username"]. "password" . $row["password"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$mysqli->close();
+
+
+//search the database for a word
+
+/*$sql = "SELECT id, first, last, email, username, password FROM accounts WHERE first LIKE '%Lauren%'";
+$result = $mysqli->query($sql);
+echo "<h2> This shows any first names with my name</h2>";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id" . $row["id"]. "first" . $row["first"]. "last" . $row["last"]. "email" . $row["email"]. "username" . $row["username"]. "password" . $row["password"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+*/
+?>
 
 <!DOCTYPEhtml>
 <html>
@@ -5,15 +57,12 @@
 <title> Sign Up Now! </title>
 
 <style>
-
     html, body {
         margin: 0;
         padding: 30px;
         min-width: 320px;  
         background-color: #d9add9;
-
     }
-
     .button {
         width: 20%;
         background: #F69BF3;
@@ -39,11 +88,8 @@
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
-
 	}
-
     .button:hover {
-
        background: #1E62D0;
        background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
        background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
@@ -51,9 +97,7 @@
        background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
        background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
        text-decoration: none;
-
 	}
-
     #titleNav { 
         top:0px;
         left:0px;
@@ -67,14 +111,12 @@
         font-family: "Times New Roman", Times, serif; 
         font-weight: bold;
         text-shadow: 1px 1.5px #736F65;
-
     }
     #nav {
         top: 0px;
         right: 0px;
         font-size:17px;
         text-align: right;   
-
     }
     #nav a {
         text-decoration: none;
@@ -83,20 +125,15 @@
     #nav a:hover {
         color: rgb(209, 129, 31);
     }
-
      #navGroup {
         display: none; 
-
     }
-
     #navIcon {
         padding-top: 10px;
         width:20px;
         box-sizing: border-box;
         display: block;
-
     }
-
     .navLink {
         width:100px;
         padding: 4px;
@@ -111,19 +148,16 @@
 		margin-top:-150px;
 		top: 50%;
 		left:50%;
-
     }
     @media screen and (min-width: 600px) {
         .navLink{
             display:inline;
             border:none;
         }
-
         #navGroup {
             display:block;
             padding-top: 10px;
         }
-
         #navIcon {
             display:none;
         }
@@ -131,22 +165,19 @@
 	
 	}
     }
-
 </style>
 
 
 
 <script type="text/javascript">
-
   function submitForm(form){
-    if(form.username.value === "") {
+    if(form.username.value == "") {
       alert('Error: Please input username.');
     }
-    if(form.password1.value !== form.password2.value) {
+    if(form.password1.value != form.password2.value) {
         alert('Error: Your passwords do not match.');
     }
-
-    if(form.password1.value === form.username.value) {
+    if(form.password1.value == form.username.value) {
         alert('Error: Password must be different from Username!');
       }
 	  }
@@ -164,7 +195,7 @@
                 </div>
             </div>
         </div>
-<form>
+<form action = "addaccount.php">
 <font face="Arial">
 <div align="center" valign="middle">
 <table class="table" bgcolor="white" width="60%" border="1px">
@@ -172,13 +203,13 @@
 		<th align="center" colspan=2;.l> Sign up </th>
 	</tr>
 	<tr> 
-		<td align="right"> First Name: </td> <td> <input id="firstname" type="text" required> </td>
+		<td align="right"> First Name: </td> <td> <input id="firstname" type="text" name = "firstname" required> </td>
 	</tr>
 	<tr>
-		<td align="right"> Last Name: </td> <td> <input id="lastname" type="text" required> </td>
+		<td align="right"> Last Name: </td> <td> <input id="lastname" type="text" name = "lastname"required> </td>
 	</tr>
 	<tr>
-		<td align="right"> Email: </td> <td> <input id="email" type="text" required> </td>
+		<td align="right"> Email: </td> <td> <input id="email" type="text" required name = "email"> </td>
 	</tr>
 	<tr>
 		<td align="right"> Pick your username: </td> <td> <input id="username" name="username" type="text" required> </td>
