@@ -64,6 +64,7 @@ project.css
                 
                 border-bottom: 1px solid rgba(0,0,0,0); 
                 border-top: 1px solid rgba(0,0,0,0); 
+
             }
             
             #footer {
@@ -100,7 +101,7 @@ project.css
                 color: white;
                  
               
-            }
+            
             
             .transparentBox h1 {
                 font-weight: bold;
@@ -109,6 +110,8 @@ project.css
             
             #info {
                 background-color: #9F3821;
+                background: url("https://storage.needpix.com/thumbs/arrangement-654569_1280.jpg") no-repeat center center fixed;
+                background-size: cover;
                 padding-left: 20px;
                 padding-right: 20px;
             }
@@ -119,8 +122,8 @@ project.css
             }
             .container {
                 width: 100%;
-                box-sizing: border-box;
-                background-color: #F8E1A3;
+                /*box-sizing: border-box;*/
+                background-image: url("https://storage.needpix.com/thumbs/arrangement-654569_1280.jpg;");
                 color: black;
             }
             
