@@ -4,7 +4,10 @@
     <head>
         <title></title>
 
-        <link href="style.css" rel="stylesheet" type="text/css" /> 
+       <!-- This is how you link to an external style sheet. -->
+       <link href="project.css" rel="stylesheet" type="text/css" />
+
+        
     </head>
     <body onresize="resize()">
         <div id="titleNav">
@@ -17,7 +20,7 @@
                     &nbsp;
                     | 
                     &nbsp;
-                    <a href="#info" class="navLink">Featured</a>
+                    <a href="#info" class="navLink">Discoverd</a>
                     &nbsp;
                     | 
                     &nbsp;
@@ -33,8 +36,8 @@
         </div>
         <div id="home" class="sng-page">
             <div class="transparentBox">
-                <h1> National Parks </h1>
-                <p> Learn more about your favorite parks including hidden trails, wildlife, news content, etc. </p>
+                <h1> Name </h1>
+                <p> Access to an online portfolio and job board for all female influencers~ </p>
             </div> 
         </div>
         
@@ -44,7 +47,7 @@
             <div class="container">
                 <div class="column column33">
                     <h2>Yellowstone National Park</h2>
-                    <img src="pics/yellowstone.jpg" alt="Yellowstone" class="resizable"
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Venus-female-symbol-pseudo-3D-pink.svg" alt="Yellowstone" class="resizable"
                          style="border-radius: 20px; width: 73%; margin-left: auto; margin-right:auto; display:block;">
                     <p>Yellowstone is America's first and most prominent national park. It's home to wildlife
                         from bears to bison and geological marvels such as hot springs and geysers
@@ -174,7 +177,7 @@
         </div>
 
         <div id="footer">
-            Isabella Arnone
+            Signup
         </div>
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -191,33 +194,27 @@
                 // $('a[href^="#"]') --> thia selector applies to all <a> elements with a href attribute that starts with "#".
                 //    Learned this from   http://www.w3schools.com/jquery/jquery_ref_selectors.asp
                 $('a[href^="#"]').click(function () {
-
                     // "this" means the element involved in the event, so, the link that was clicked.
                     console.log("this");
                     console.log(this); // if you console.log an object, you'll see nice tree view
                     // of the object's properties in the console (F12 from Chrome)
                     console.log("-");
-
                     // ".hash" refers to the href attribute of the <a> tag. So, if <a href="#page1">
                     // was clicked, then "this.hash" has this value: "#page1"
                     console.log("this.hash");
                     console.log(this.hash);
                     console.log("-");
-
                     // $ is a jQuery function which returns a jQuery object that references the
                     // specified HTML element. For example, $("#content") returns a jQuery
                     // object that references the HTML element with id="content". This object also has
                     // loads of contextual information (e.g., parent, siblings, and many other properties.
-
                     // So, variable "target" references a jQuery object that the user clicked. 
                     var target = $(this.hash);
                     console.log("$(this.hash)");
                     console.log(target);
                     console.log("-");
-
                     // This if statement will run if target.length exists.
                     if (target.length) {
-
                         // animate is a jQuery function (what_to_do, how_fast_in_millisecs). 
                         // "what_to_do" is an object with any number of CSS property/value pairs:
                         /*
@@ -237,20 +234,17 @@
                         // 
                         // .offset() is a function (of any jQuery object) that returns an object with 
                         // top and left properties (top/left relative to the document).
-
                         $('html, body').animate({
                             // set the scrollTop property (of the browser)
                             // to be the top attribute of the element being linked to
                             scrollTop: target.offset().top
                         }, 1000);  // but do it a bit slow (900 millisecs)
                     }
-
                 });
                 // returns a reference to the HTML element with the given id
                 function my$(id) {
                     return document.getElementById(id);
                 }
-
                 // This function is invoked whenever the navIcon is clicked -- because of the 
                 // <div id="navIcon" onclick="iconClicked()"> tag in the HTML.
                 function iconClicked() {
@@ -263,44 +257,35 @@
                     }
                     console.log("icon Clicked. navGroup is " + my$("navGroup").style.display);
                 }
-
-
                 // Global declarations **************************************************
                 var navIcon = my$("navIcon"); // reference to the "navIcon" div
-
                 // This is the initial display attribute (block or none) - depends on the 
                 // size of browser at page refresh time. 
                 // I had to use getComputedStyle (per internet search) rather than just 
                 // navIcon.style.display because the initial setting is set by CSS not javaScript.
                 var iconDisplay = getComputedStyle(navIcon).display;
                 console.log("initial iconDisplay is " + iconDisplay);
-
                 // We want to have certain behavior when the browser first "gets small" 
                 // (converts to mobile layout) and when the browser first "gets big" 
                 // (converts to desktop layout). So we have to track the previous value 
                 // as well as the current value.
                 var previousIconDisplay = iconDisplay;
                 // End of Global declarations **************************************************
-
-
                 // This function is invoked whenever the browser is resized -- because of the 
                 // <body> tag in the HTML: <body onresize="resize()">
                 function resize() {
                     previousIconDisplay = iconDisplay;
                     iconDisplay = getComputedStyle(navIcon).display;
                     console.log("resized. iconDisplay is " + iconDisplay);
-
                     if (iconDisplay === "none" && previousIconDisplay === "block") {
                         console.log("sized big - show nav group");
                         my$("navGroup").style.display = "block";
-
                     }
                     if (iconDisplay === "block" && previousIconDisplay === "none") {
                         console.log("sized small - hide nav group");
                         my$("navGroup").style.display = "none";
                     }
                 }
-
             });
         </script>
 
