@@ -67,19 +67,6 @@
 
     }
 
-    #footer {
-        position:fixed;
-        bottom: 0px; 
-        left: 0px; 
-        z-index: 1;
-
-        background-color: #ffccff;
-        color: white; 
-        width:100%;
-        text-align:center;
-        padding:4px;
-    }
-
     #home {
         background: url(pics/natpark.jpeg) no-repeat center center fixed;
         background-size: cover;
@@ -125,20 +112,22 @@
         /*box-sizing: border-box;*/
         background-image: url("https://storage.needpix.com/thumbs/arrangement-654569_1280.jpg;"); 
         color: black;
+        display: inline-block;
     }
 
     .container a {
         text-decoration: none;
-        background-color: #9F3821;
-        color: white;
+        background-color: #ffccff;
         padding: 7px 7px;
         text-align: center;
-        display: inline-block;
+        display: block;
         border-radius: 5px;
+        margin: auto;
+        width: 37%;
     }
 
     .container a:hover {
-        background-color: #D24119;
+        background-color: #d9add9;
     }
 
      .column {
@@ -207,4 +196,5 @@
     input:focus { /* When your cursor is in the field... */
         box-shadow: 0px 0px 9px #668899;
     }
+    
     
