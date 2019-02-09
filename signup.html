@@ -1,19 +1,21 @@
+
 <!DOCTYPEhtml>
-
 <html>
-
 <head>
-
 <title> Sign Up Now! </title>
+
 <style>
+
     html, body {
         margin: 0;
         padding: 30px;
         min-width: 320px;  
         background-color: #d9add9;
+
     }
+
     .button {
-        width: 45%;
+        width: 20%;
         background: #F69BF3;
         background-image: -webkit-linear-gradient(top, #F69BF3, #D03296);
         background-image: -moz-linear-gradient(top, #F69BF3, #D03296);
@@ -37,8 +39,11 @@
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
-}
+
+	}
+
     .button:hover {
+
        background: #1E62D0;
        background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
        background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
@@ -46,7 +51,9 @@
        background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
        background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
        text-decoration: none;
-}
+
+	}
+
     #titleNav { 
         top:0px;
         left:0px;
@@ -54,85 +61,99 @@
         width: 100%;
         min-width: 600px;
         position: fixed;
-
         background-color: #ffccff;
-
         padding-bottom: 8px; 
         color: white;
         font-family: "Times New Roman", Times, serif; 
         font-weight: bold;
         text-shadow: 1px 1.5px #736F65;
-    }
 
+    }
     #nav {
         top: 0px;
         right: 0px;
-
         font-size:17px;
         text-align: right;   
-    }
 
+    }
     #nav a {
         text-decoration: none;
         color: white;
     }
-
     #nav a:hover {
         color: rgb(209, 129, 31);
     }
+
      #navGroup {
         display: none; 
+
     }
+
     #navIcon {
         padding-top: 10px;
         width:20px;
         box-sizing: border-box;
         display: block;
+
     }
+
     .navLink {
         width:100px;
         padding: 4px;
         display: block;
         box-sizing: border-box;
+	}
+	.table {
+		width:500px;
+		height:300px;
+		position: fixed;
+		margin-left:-250px;
+		margin-top:-150px;
+		top: 50%;
+		left:50%;
+
     }
     @media screen and (min-width: 600px) {
         .navLink{
             display:inline;
             border:none;
         }
+
         #navGroup {
             display:block;
             padding-top: 10px;
         }
+
         #navIcon {
             display:none;
         }
+		
+	
+	}
     }
+
 </style>
 
+
+
 <script type="text/javascript">
-  function submitForm(form)
-  {
+
+  function submitForm(form){
     if(form.username.value === "") {
       alert('Error: Please input username.');
     }
-    
     if(form.password1.value !== form.password2.value) {
         alert('Error: Your passwords do not match.');
-    
-      }
-      if(form.password1.value === form.username.value) {
+    }
+
+    if(form.password1.value === form.username.value) {
         alert('Error: Password must be different from Username!');
-   
       }
-      }
+	  }
 </script>
-
 </head>
-
-
-
 <body>
+
 <div id="titleNav">
             <div id="nav">
                 <div id="navIcon" onclick="iconClicked()">
@@ -144,74 +165,39 @@
             </div>
         </div>
 <form>
-
-<div align="center">
-
-<table bgcolor="white">
-
+<font face="Arial">
+<div align="center" valign="middle">
+<table class="table" bgcolor="white" width="60%" border="1px">
 	<tr>
-
-		<th colspan="2" align="center"> Sign up </th>
-
+		<th align="center" colspan=2;.l> Sign up </th>
 	</tr>
-
 	<tr> 
-
-		<td> First Name: </td> <td> <input id="firstname" type="text" required> </td>
-
+		<td align="right"> First Name: </td> <td> <input id="firstname" type="text" required> </td>
 	</tr>
-
 	<tr>
-
-		<td> Last Name: </td> <td> <input id="lastname" type="text" required> </td>
-
+		<td align="right"> Last Name: </td> <td> <input id="lastname" type="text" required> </td>
 	</tr>
-
 	<tr>
-
-		<td> Email: </td> <td> <input id="email" type="text" required> </td>
-
+		<td align="right"> Email: </td> <td> <input id="email" type="text" required> </td>
 	</tr>
-
 	<tr>
-
-		<td> Pick your username: </td> <td> <input id="username" name="username" type="text" required> </td>
-
+		<td align="right"> Pick your username: </td> <td> <input id="username" name="username" type="text" required> </td>
 	</tr>
-
 	<tr>
-
-		<td> Pick your password: </td> <td> <input id="password1" name="password1" type="password" required> </td>
-
+		<td align="right"> Pick your password: </td> <td> <input id="password1" name="password1" type="password" required> </td>
 	</tr>
-
 	<tr>
-
-		<td> Confirm your password: </td> <td> <input id="password1" name="password2" type="password" required> </td>
-
+		<td align="right"> Confirm your password: </td> <td> <input id="password1" name="password2" type="password" required> </td>
 	</tr>
-
 	<tr>
-
-		<td colspan="2" align="center"> 
-
+		<td align="center" colspan=2 cellpadding="5px"> 
 		<center> 
-
 			<button class="button" onclick="submitForm(form)"> Submit </button>
 			<input class="button" type="reset" value="Reset"> </center> </td> 
-
 	</tr>
-
-	
-
-
-
 </table>
-
 </div>
-
+</font>
 </form>
-
 </body>
-
 </html>
