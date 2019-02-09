@@ -71,6 +71,15 @@
         background: url(pics/natpark.jpeg) no-repeat center center fixed;
         background-size: cover;
     }
+    
+    #myVideo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+      }
+    
 
     .transparentBox {
         margin: auto;
@@ -196,5 +205,4 @@
     input:focus { /* When your cursor is in the field... */
         box-shadow: 0px 0px 9px #668899;
     }
-    
     
