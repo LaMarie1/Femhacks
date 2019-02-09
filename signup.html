@@ -3,21 +3,23 @@
 <head>
 <title> Sign Up Now! </title>
 <style>
-
+    html, body {
+        background-color: #ffccff;
+    }
 </style>
 <script type="text/javascript">
 
   function submitForm(form)
   {
-    if(form.username.value == "") {
+    if(form.username.value === "") {
       alert('Error: Please input username.');
     }
     
-    if(form.password1.value != form.password2.value) {
+    if(form.password1.value !== form.password2.value) {
         alert('Error: Your passwords do not match.');
     
       }
-      if(form.password1.value == form.username.value) {
+      if(form.password1.value === form.username.value) {
         alert('Error: Password must be different from Username!');
    
       }
@@ -29,7 +31,7 @@
 <body>
 <form>
 <div align="center">
-<table border="1px">
+<table bgcolor="white">
 	<tr>
 		<th colspan="2" align="center"> Sign up </th>
 	</tr>
@@ -43,7 +45,7 @@
 		<td> Email: </td> <td> <input id="email" type="text" required> </td>
 	</tr>
 	<tr>
-		<td> Pick your username: </td> <td> <input id="username" name="username"type="text" required> </td>
+		<td> Pick your username: </td> <td> <input id="username" name="username" type="text" required> </td>
 	</tr>
 	<tr>
 		<td> Pick your password: </td> <td> <input id="password1" name="password1" type="password" required> </td>
