@@ -5,7 +5,25 @@
 <style>
 
 </style>
+<script type="text/javascript">
 
+  function submitForm(form)
+  {
+    if(form.username.value == "") {
+      alert('Error: Please input username.');
+    }
+    
+    if(form.password1.value != form.password2.value) {
+        alert('Error: Your passwords do not match.');
+    
+      }
+      if(form.password1.value == form.username.value) {
+        alert('Error: Password must be different from Username!');
+   
+      }
+      }
+
+</script>
 </head>
 
 <body>
@@ -25,73 +43,24 @@
 		<td> Email: </td> <td> <input id="email" type="text" required> </td>
 	</tr>
 	<tr>
-		<td> Pick your username: </td> <td> <input id="username" type="text" required> </td>
+		<td> Pick your username: </td> <td> <input id="username" name="username"type="text" required> </td>
 	</tr>
 	<tr>
-		<td> Pick your password: </td> <td> <input name="password1" type="password" required> </td>
+		<td> Pick your password: </td> <td> <input id="password1" name="password1" type="password" required> </td>
 	</tr>
 	<tr>
-		<td> Confirm your password: </td> <td> <input name="password2" type="password" required> </td>
+		<td> Confirm your password: </td> <td> <input id="password1" name="password2" type="password" required> </td>
 	</tr>
 	<tr>
-		<td colspan="2" align="center"> <center> <input type="submit" value="Submit"><input type="reset" value="Reset"> </center> </td> 
+		<td colspan="2" align="center"> 
+		<center> 
+			<button onclick="submitForm(form)"> Submit </button>
+			<input type="reset" value="Reset"> </center> </td> 
 	</tr>
 	
 
 </table>
 </div>
 </form>
-	<script type="text/javascript">
-
-  function checkForm(form)
-  {
-    if(form.username.value == "") {
-      alert("Error: Please input username.");
-      form.username.focus();
-      return false;
-    }
-    
-    if(form.password1.value != "" && form.pwd1.value != form.pwd2.value) {
-      if(form.pwd1.value.length < 6) {
-        alert("Error: Password must contain at least six characters!");
-        form.pwd1.focus();
-        return false;
-      }
-      if(form.pwd1.value == form.username.value) {
-        alert("Error: Password must be different from Username!");
-        form.pwd1.focus();
-        return false;
-      }
-      re = /[0-9]/;
-      if(!re.test(form.pwd1.value)) {
-        alert("Error: password must contain at least one number (0-9)!");
-        form.pwd1.focus();
-        return false;
-      }
-      re = /[a-z]/;
-      if(!re.test(form.pwd1.value)) {
-        alert("Error: password must contain at least one lowercase letter (a-z)!");
-        form.pwd1.focus();
-        return false;
-      }
-      re = /[A-Z]/;
-      if(!re.test(form.pwd1.value)) {
-        alert("Error: password must contain at least one uppercase letter (A-Z)!");
-        form.pwd1.focus();
-        return false;
-      }
-    } else {
-      alert("Error: Please check that you've entered and confirmed your password!");
-      form.pwd1.focus();
-      return false;
-    }
-
-    alert("You entered a valid password: " + form.pwd1.value);
-    return true;
-  }
-
-</script>
 </body>
 </html>
-
-
