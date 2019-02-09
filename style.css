@@ -1,0 +1,212 @@
+ html, body {
+                margin: 0;
+                padding: 0;
+                min-width: 320px;
+                font-family: "Times New Roman", Times, serif; 
+                
+            }
+            
+            #titleNav { 
+                top:0px;
+                left:0px;
+                z-index: 1;
+                width: 100%;
+                min-width: 600px;
+                position: fixed;
+                
+                background-color: #5e3b36;
+               
+                padding-bottom: 8px; 
+                color: white;
+                font-family: "Times New Roman", Times, serif; 
+                font-weight: bold;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            
+            #nav {
+                top: 0px;
+                right: 0px;
+                
+                font-size:17px;
+                text-align: right;   
+            }
+            
+            #nav a {
+                text-decoration: none;
+                color: white;
+            }
+            
+            #nav a:hover {
+                color: rgb(209, 129, 31);
+            }
+             #navGroup {
+                display: none; 
+            }
+            #navIcon {
+                padding-top: 10px;
+                width:20px;
+                box-sizing: border-box;
+                display: block;
+            }
+            .navLink {
+                width:100px;
+                padding: 4px;
+                display: block;
+                box-sizing: border-box;
+            }
+
+            
+            
+            .sng-page {
+                min-height: 500px;
+                min-height: 100vh;
+                
+                border-bottom: 1px solid rgba(0,0,0,0); 
+                border-top: 1px solid rgba(0,0,0,0); 
+            }
+            
+            #footer {
+                position:fixed;
+                bottom: 0px; 
+                left: 0px; 
+                z-index: 1;
+               
+
+                background-color: #5e3b36;
+                color: white; 
+                width:100%;
+                text-align:center;
+                padding:4px;
+            }
+            
+            #home {
+                background: url(pics/natpark.jpeg) no-repeat center center fixed;
+                background-size: cover;
+            }
+            
+            .transparentBox {
+                margin: auto;
+                margin-top: 20%;
+                margin-bottom: 15%;
+                
+                background-color: #341d1a;
+                border: 1px solid #341d1a;
+                opacity: 0.64;
+                max-width: 370px;
+                width: 100%;
+                border-radius: 10px;
+                
+                text-align: center;
+                color: white;
+                 
+              
+            }
+            
+            .transparentBox h1 {
+                font-weight: bold;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            
+            #info {
+                background-color: #9F3821;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #info h1 {
+                color: white;
+                text-align: center;
+                text-shadow: 1px 1.5px #736F65;
+            }
+            .container {
+                width: 100%;
+                box-sizing: border-box;
+                background-color: #F8E1A3;
+
+                color: black;
+            }
+            
+            .container a {
+                text-decoration: none;
+                background-color: #9F3821;
+                color: white;
+                padding: 7px 7px;
+                text-align: center;
+                display: inline-block;
+                border-radius: 5px;
+            }
+            
+            .container a:hover {
+                background-color: #D24119;
+            }
+            
+             .column {
+                width: 100%;
+                padding: 5px 20px;
+                
+                box-sizing: border-box; 
+                border-bottom: 1px solid white;
+                border-top: 1px solid white;
+            }
+            .column h2 {
+                text-align: center;
+            }
+
+            /* ------------ Desktop Only Styles --------------- */
+            @media screen and (min-width: 600px) {
+
+                .column {
+                    float: left;
+                    border: none;             
+                }
+
+                .column33 {
+                    width: 33%;
+                }
+                
+                .column50 {
+                    width: 50%;
+                }
+
+                .clear { 
+                    clear:both;
+                }
+                .navLink{
+                    display:inline;
+                    border:none;
+                }
+                #navGroup {
+                    display:block;
+                    padding-top: 10px;
+                }
+                #navIcon {
+                    display:none;
+                }
+
+            }
+            
+            #formpage {
+                background-color: #34322d;
+                color: white;
+            }
+               
+            #formpage h3 {
+                padding-left: 50px;
+            }
+            
+            form {
+                background-color: #34322d;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                margin-left: 5ex;
+                margin-right: 5ex;
+                line-height: 1.75em;
+            }
+
+            input {
+                padding:2px;
+                border-color: lightgray; 
+            }
+
+            input:focus { /* When your cursor is in the field... */
+                box-shadow: 0px 0px 9px #668899;
+            }
