@@ -1,0 +1,22 @@
+<?php 
+
+//include "do connect.php";
+$first=$_GET["firstname"];
+$last=$_GET["lastname"];
+$email=$_GET["email"];
+$user=$_GET["username"];
+$pass=$_GET["password1"];
+
+$host = "localhost";
+$username = "root";
+$user_pass = "usbw";
+$database_in_use = "test";
+
+//create database connectiono instance
+$mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
+
+$sql = "INSERT INTO accounts (first, last, email, username, password)
+VALUES ('$first', '$last', '$email', '$user', '$pass')";
+$result = $mysqli->query($sql);
+echo "<h2>added new user: $first $last </h2";
+ ?>
