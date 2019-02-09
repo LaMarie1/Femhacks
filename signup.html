@@ -1,68 +1,34 @@
-<!DOCTYPEhtml>
-<html>
-<head>
-<title> Sign Up Now! </title>
-<style>
-    html, body {
-        background-color: #ffccff;
-    }
-</style>
-<script type="text/javascript">
+.sbmtbutton {
+   background: #F69BF3;
+   background-image: -webkit-linear-gradient(top, #F69BF3, #D03296);
+   background-image: -moz-linear-gradient(top, #F69BF3, #D03296);
+   background-image: -ms-linear-gradient(top, #F69BF3, #D03296);
+   background-image: -o-linear-gradient(top, #F69BF3, #D03296);
+   background-image: linear-gradient(to bottom, #F69BF3, #D03296);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: Verdana;
+   font-size: 31px;
+   font-weight: 200;
+   padding: 25px;
+   box-shadow: 1px 1px 20px 0px #FFFFFF;
+   -webkit-box-shadow: 1px 1px 20px 0px #FFFFFF;
+   -moz-box-shadow: 1px 1px 20px 0px #FFFFFF;
+   text-shadow: 1px 1px 20px #FFFFFF;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+}
 
-  function submitForm(form)
-  {
-    if(form.username.value === "") {
-      alert('Error: Please input username.');
-    }
-    
-    if(form.password1.value !== form.password2.value) {
-        alert('Error: Your passwords do not match.');
-    
-      }
-      if(form.password1.value === form.username.value) {
-        alert('Error: Password must be different from Username!');
-   
-      }
-      }
-
-</script>
-</head>
-
-<body>
-<form>
-<div align="center">
-<table bgcolor="white">
-	<tr>
-		<th colspan="2" align="center"> Sign up </th>
-	</tr>
-	<tr> 
-		<td> First Name: </td> <td> <input id="firstname" type="text" required> </td>
-	</tr>
-	<tr>
-		<td> Last Name: </td> <td> <input id="lastname" type="text" required> </td>
-	</tr>
-	<tr>
-		<td> Email: </td> <td> <input id="email" type="text" required> </td>
-	</tr>
-	<tr>
-		<td> Pick your username: </td> <td> <input id="username" name="username" type="text" required> </td>
-	</tr>
-	<tr>
-		<td> Pick your password: </td> <td> <input id="password1" name="password1" type="password" required> </td>
-	</tr>
-	<tr>
-		<td> Confirm your password: </td> <td> <input id="password1" name="password2" type="password" required> </td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"> 
-		<center> 
-			<button onclick="submitForm(form)"> Submit </button>
-			<input type="reset" value="Reset"> </center> </td> 
-	</tr>
-	
-
-</table>
-</div>
-</form>
-</body>
-</html>
+.sbmtbutton:hover {
+   background: #1E62D0;
+   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+   background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
+   text-decoration: none;
+}
