@@ -5,13 +5,12 @@
 <head>
 
 <title> Sign Up Now! </title>
-
 <style>
-
     html, body {
-	
-		background-color: #ffccff;
-
+        margin: 0;
+        padding: 30px;
+        min-width: 320px;  
+        background-color: #a685ff;
     }
 	.button {
 		width: 45%;
@@ -39,55 +38,94 @@
 		display: inline-block;
 		cursor: pointer;
 }
-
 	.button:hover {
-	   background: #1E62D0;
-	   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
-	   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
-	   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
-	   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
-	   background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
-	   text-decoration: none;
+	   background: #1E62D0;
+	   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+	   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+	   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+	   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+	   background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
+	   text-decoration: none;
 }
+    #titleNav { 
+        top:0px;
+        left:0px;
+        z-index: 1;
+        width: 100%;
+        min-width: 600px;
+        position: fixed;
 
+        background-color: #ffccff;
+
+        padding-bottom: 8px; 
+        color: white;
+        font-family: "Times New Roman", Times, serif; 
+        font-weight: bold;
+        text-shadow: 1px 1.5px #736F65;
+    }
+
+    #nav {
+        top: 0px;
+        right: 0px;
+
+        font-size:17px;
+        text-align: right;   
+    }
+
+    #nav a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #nav a:hover {
+        color: rgb(209, 129, 31);
+    }
+     #navGroup {
+        display: none; 
+    }
+    #navIcon {
+        padding-top: 10px;
+        width:20px;
+        box-sizing: border-box;
+        display: block;
+    }
+    .navLink {
+        width:100px;
+        padding: 4px;
+        display: block;
+        box-sizing: border-box;
+    }
+    @media screen and (min-width: 600px) {
+        .navLink{
+            display:inline;
+            border:none;
+        }
+        #navGroup {
+            display:block;
+            padding-top: 10px;
+        }
+        #navIcon {
+            display:none;
+        }
+    }
 </style>
 
 <script type="text/javascript">
-
-
-
   function submitForm(form)
-
   {
-
     if(form.username.value === "") {
-
       alert('Error: Please input username.');
-
     }
-
     
-
     if(form.password1.value !== form.password2.value) {
-
         alert('Error: Your passwords do not match.');
-
     
-
       }
-
       if(form.password1.value === form.username.value) {
-
         alert('Error: Password must be different from Username!');
-
    
-
       }
-
       }
-
-
-
 </script>
 
 </head>
@@ -95,7 +133,25 @@
 
 
 <body>
-
+<div id="titleNav">
+            <div id="nav">
+                <div id="navIcon" onclick="iconClicked()">
+                        <img src="https://i2.wp.com/llumarlite.co.uk/images/logos/menu_bar.png" alt="" width="35"/>
+                    </div>
+                <div id="navGroup">
+                    <a href="#home" class="navLink">Home</a>
+                    &nbsp;
+                    | 
+                    &nbsp;
+                    <a href="#info" class="navLink">About Us</a>
+                    &nbsp;
+                    | 
+                    &nbsp;
+                    <a href="#formpage" class="navLink">Form</a>
+                    &nbsp;
+                </div>
+            </div>
+        </div>
 <form>
 
 <div align="center">
@@ -168,6 +224,3 @@
 </body>
 
 </html>
-
-
-
